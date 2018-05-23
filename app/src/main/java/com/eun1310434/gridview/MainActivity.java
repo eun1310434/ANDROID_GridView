@@ -1,17 +1,17 @@
 /*=====================================================================
-□ Infomation
-  ○ Data : 08.03.2018
+□ INFORMATION
+  ○ Data : 23.05.2018
   ○ Mail : eun1310434@naver.com
   ○ Blog : https://blog.naver.com/eun1310434
   ○ Reference : Do it android app Programming
 
-□ Function
-  ○ 그리드 뷰
-  ○ BaseAdapter 활용
-  ○ Item 추가 기능
+□ STUDY
+  ○ Adapter를 활용하여 효과적으로 관리
 
-□ Study
+□ FUNCTION
+  ○ protected void onCreate(Bundle savedInstanceState)
   ○
+
 =====================================================================*/
 package com.eun1310434.gridview;
 
