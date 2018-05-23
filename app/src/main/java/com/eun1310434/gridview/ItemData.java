@@ -9,7 +9,6 @@
   ○ Adapter를 활용하여 효과적으로 관리
 
 □ FUNCTION
-  ○ protected void onCreate(Bundle savedInstanceState)
   ○
 
 =====================================================================*/
