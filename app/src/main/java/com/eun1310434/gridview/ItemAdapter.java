@@ -10,22 +10,23 @@
 
 □ FUNCTION
   ○
-
 =====================================================================*/
 package com.eun1310434.gridview;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import java.util.ArrayList;
 
-class Adapter extends BaseAdapter {
-    ArrayList<ItemData> items = new ArrayList<ItemData>();
-    Context ApplicationContext;
+class ItemAdapter extends BaseAdapter {
+    private ArrayList<ItemData> items = new ArrayList<ItemData>();
+    private Context ApplicationContext;
+    private ItemView view = null;
 
-    public Adapter(Context _context){
+    public ItemAdapter(Context _context){
         ApplicationContext = _context;
     }
 
@@ -45,21 +46,16 @@ class Adapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position;
+    return position;
     }
 
-
-    ItemView view = null;
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
-        if( convertView == null){
-            view = new ItemView(ApplicationContext);
-        }else{
-            view = (ItemView) convertView;
-        }
 
+        Log.e("QuestionInfoAcalysisLMA", "getView");
+        if( convertView == null) view = new ItemView(ApplicationContext);
+        else view = (ItemView) convertView;
         view.setItemView(items.get(position));
-
         return view;
     }
 }

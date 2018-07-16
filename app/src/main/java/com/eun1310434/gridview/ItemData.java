@@ -16,10 +16,10 @@ package com.eun1310434.gridview;
 
 public class ItemData {
 
-    String title;
-    String contents;
-    int num;
-    int imgRes;
+    private String title;
+    private String contents;
+    private int num;
+    private int imgRes;
 
     public ItemData(String title, String contents, int num, int imgRes) {
         this.title = title;

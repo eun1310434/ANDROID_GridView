@@ -51,9 +51,9 @@ public class ItemView extends LinearLayout {
 
     public void setItemView(ItemData id)
     {
-        textView.setText(id.title);
-        textView2.setText(id.contents);
-        textView3.setText(String.valueOf(id.num));
-        imageView.setImageResource(id.imgRes);
+        textView.setText(id.getTitle());
+        textView2.setText(id.getContents());
+        textView3.setText(String.valueOf(id.getNum()));
+        imageView.setImageResource(id.getImgRes());
     }
 }

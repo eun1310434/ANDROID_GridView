@@ -27,28 +27,25 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText editText_title;
     EditText editText_contents;
-
     GridView gridView;
-    Adapter adapter;
+    ItemAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gridView = (GridView) findViewById(R.id.gridView);
-        gridView.setNumColumns(3);
-
-        adapter = new Adapter(getApplicationContext());
-
+        //ItemAdapter :: BaseAdapter
+        adapter = new ItemAdapter(this.getApplicationContext());
         adapter.addItem(new ItemData("Title - a", "Contents - a", 0, R.drawable.img_a));
         adapter.addItem(new ItemData("Title - b", "Contents - b", 1, R.drawable.img_b));
         adapter.addItem(new ItemData("Title - c", "Contents - c", 2, R.drawable.img_c));
         adapter.addItem(new ItemData("Title - d", "Contents - d", 3, R.drawable.img_d));
         adapter.addItem(new ItemData("Title - e", "Contents - e", 4, R.drawable.img_e));
 
-        gridView.setAdapter(adapter);
-
+        gridView = (GridView) findViewById(R.id.gridView);
+        gridView.setNumColumns(3);
+        gridView.setAdapter(adapter);//merge
 
         editText_title = (EditText) findViewById(R.id.editText_title);
         editText_contents = (EditText) findViewById(R.id.editText_contents);
@@ -63,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
-
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
